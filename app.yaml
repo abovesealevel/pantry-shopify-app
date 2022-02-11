@@ -1,0 +1,20 @@
+runtime: custom
+env: flex
+entrypoint: gunicorn -b :5000 main:application --log-level=debug
+threadsafe: true
+
+env_variables:
+  SHOPIFY_API_KEY: 14b66428f674a271e65c1f6928f558f9
+  SHOPIFY_SHARED_SECRET: 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
+  HOSTNAME_FOR_SHOPIFY: https://shopify-pantry-testing.ew.r.appspot.com
+  SHOPIFY_BILLING_TEST_MODE: true
+  WEBHOOK_TEST_MODE: false
+  LOG_LEVEL: DEBUG
+  CLOUD_SQL_USERNAME: joel
+  CLOUD_SQL_PASSWORD: rAg7vimdiS
+  CLOUD_SQL_DATABASE_NAME: pantry_mysql_db
+  CLOUD_SQL_CONNECTION_NAME: pantry-shopify-testing-db
+  DATABASE_URL: mysql+pymysql://root:rAg7vimdiS@34.88.135.61:3306/pantry-shopify-testing-db?unix_socket=/cloudsql/shopify-pantry-testing:europe-north1:pantry-shopify-test-db
+
+runtime_config:
+ python_version: 3 
